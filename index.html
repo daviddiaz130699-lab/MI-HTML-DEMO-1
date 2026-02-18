@@ -1,4 +1,36 @@
-<section class="card" id="texto">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>HTML Showcase</h1>
+      <p class="subtitle">
+        Un muestrario de etiquetas HTML + un CSS que no da pena 😌
+      </p>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav">
+          <li><a href="#texto">Texto</a></li>
+          <li><a href="#listas">Listas</a></li>
+          <li><a href="#multimedia">Multimedia</a></li>
+          <li><a href="#tablas">Tablas</a></li>
+          <li><a href="#formularios">Formularios</a></li>
+          <li><a href="#semantica">Semántica</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido" class="container">
+    <section class="card" id="texto">
       <h2>1) Texto y estructura</h2>
 
       <article>
@@ -37,30 +69,144 @@
       </article>
     </section>
 
-    <section class="card" id=" listas">
-        <h2>2) listas</h2>
-        <div class="grid">
-            <h3> listas no ordenadas</h3>
-            <ul>
-                <li>pan</li>
-                <li>cafe</li>
-                <li>paciencia con html</li>
-            </ul>
+    <section class="card" id="listas">
+      <h2>2) Listas</h2>
+
+      <div class="grid">
+        <div>
+          <h3>Lista no ordenada</h3>
+          <ul>
+            <li>carros</li>
+            <li>motos</li>
+            <li>tu tranquilo con CSS</li>
+          </ul>
         </div>
 
         <div>
-            <h3> lista  ordenadas</h3>
-<ol>
-    <li>clonar repo</li>
-    <li>editar</li>
-    <li>commit</li>
-    <li>push</li>
-</ol>
+          <h3>Lista ordenada</h3>
+          <ol>
+            <li>Clonar repo</li>
+            <li>Editar</li>
+            <li>Commit</li>
+            <li>Push</li>
+          </ol>
         </div>
 
+        <div>
+          <h3>Lista de definición</h3>
+          <dl>
+            <dt>HTML</dt>
+            <dd>Estructura y significado.</dd>
+            <dt>CSS</dt>
+            <dd>Estilo y presentación.</dd>
+            <dt>JS</dt>
+            <dd>Interacción y lógica.</dd>
+          </dl>
+        </div>
+      </div>
     </section>
 
-    <section class="card"id="multimedia">
-        <h2>3) multimedia</h2>
-        <img src="https://www.revzilla.com/blog_content_image/image/71966/redline_hero/2020-Yamaha-MT09-beauty-right.jpg" alt="imagen de ejemplo aleatorio"loading="lazy">
+    <section class="card" id="multimedia">
+      <h2>3) Multimedia</h2>
+
+      <figure>
+        <img
+          src="https://www.motosausio.com/wp-content/uploads/2024/07/2024_YAM_MT09AS_EU_MDNM6_STA_008_03-copia.jpg"
+          alt="Imagen de ejemplo aleatoria"
+          loading="lazy"
+        />
+        <figcaption>Una imagen con <code>&lt;figure&gt;</code> + <code>&lt;figcaption&gt;</code>.</figcaption>
+      </figure>
+
+      <p>
+        <button type="button" class="btn">Botón</button>
+        <a class="btn ghost" href="#formularios">Ir a formularios</a>
+      </p>
+
+      <p>
+        También existe <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code>, pero requieren archivos. (No te meto un MP4 aquí para no volver esto una novela).
+      </p>
+
+      <h3>SVG simple</h3>
+      <svg width="160" height="60" role="img" aria-label="Ejemplo SVG">
+        <rect x="5" y="5" width="150" height="50" rx="12"></rect>
+        <text x="80" y="38" text-anchor="middle">SVG</text>
+      </svg>
     </section>
+
+    <section class="card" id="tablas">
+        <h2>4. Tablas</h2>
+        <!-- Vamos a crear una tabla -->
+        <table>
+            <caption>Tabla de ejemplo</caption>
+            <thead>
+                <!-- TR filas, TD Celdas -->
+                <tr>
+                    <!-- Agregamos SCOPE para especificar que pertenece al titulo de la columna -->
+                    <th scope="col">Comando</th>
+                    <th scope="col">¿Qué hace?</th>
+               </thead>
+               <tbody>
+                </tr>
+               <tr>
+                    <td><code>GIT Status</code></td>
+                    <td>Muestras cambios pendientes</td>
+               </tr>
+               <tr>
+                   <td><code>GIT add .</code></td>
+                   <td>Agrega cambios</td>
+                </tr>
+                <tr>
+                     <td><code>GIT Commit</code></td>
+                     <td>Guarda versión</td>
+                </tr>
+               <tr>
+                    <td><code>GIT Push</code></td>
+                    <td>Sube el repositorio a GitHub</td>
+               </tr>
+               <tr>
+                    <td><code>GIT Push</code></td>
+                    <td>Sube el repositorio a GitHub</td>
+               </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section class="card" id="formularios">
+        <h2>5. Formularios</h2>
+        <!-- Action ocurre cuando se envían los datos del form -->
+        <form action="#" method="post" class="form">
+            <!-- contenedor para formularios -->
+            <fieldset>
+                <!-- título (legend) -->
+                 <legend>Datos Básicos</legend>
+                 <label for="">
+                    Nombre
+                    <input type="text" name="nombre" placeholder="Ingresa tu nombre" required>
+                </label>
+                <label for="">
+                    Email
+                    <input type="email" name="email" placeholder="Ingresa tu correo" required>
+                </label>
+                <label for="">
+                    Password
+                    <!-- minlength especifica los caracteres mínimos que debe tener la contraseña -->
+                    <input type="password" name="pass" minlength="6" required>
+                </label>
+                <label for="">
+                    Fecha
+                    <input type="date" name="fecha" required>
+                </label>
+                <label for="">
+                    Selecció
+                    <select name="opcion">
+                        <option value="">Elige la opción</option>
+                        <option value="">HTML</option>
+                        <option value="">CSS</option>
+                        <option value="">JAVASCRIPT</option>
+                    </select>
+                </label>
+            </fieldset>
+        </form>
+    </section>
+</body>
